@@ -23,35 +23,35 @@ export default function Banner() {
       {/* Fotos à direita */}
       <div className="flex flex-row gap-4">
         {/* Foto esquerda (grande) */}
-        <div className="">
+        <div className="md:w-[400px] md:h-[700px] w-[200px] h-[350px]">
           <Image
             src="https://res.cloudinary.com/duvoti4ou/image/upload/v1746575999/foto1_cei2hq.jpg"
             alt="Foto 1"
-            width={300}
-            height={500}
+            width={400}
+            height={700}
             loading="lazy"
-            className="object-cover rounded-lg h-125"
+            className="object-cover rounded-lg h-[350px] w-[200px] md:w-[400px] md:h-[700px]"
           />
         </div>
 
         {/* Duas fotos menores (uma em cima da outra) */}
         <div className="flex flex-col justify-between">
-          <div className="">
+          <div className="w-[200px] h-[170px] md:w-[400px] md:h-[345px]">
             <Image
               src="https://res.cloudinary.com/duvoti4ou/image/upload/v1746575999/foto2_iaymof.jpg"
               alt="Foto 2"
-              width={300}
-              height={250}
-              className="object-cover rounded-lg h-60"
+              width={400}
+              height={345}
+              className="object-cover rounded-lg h-[170px] w-[200px] md:w-[400px] md:h-[345px]"
             />
           </div>
-          <div className="">
+          <div className="w-[200px] h-[170px] md:w-[400px] md:h-[345px]">
             <Image
               src="https://res.cloudinary.com/duvoti4ou/image/upload/v1746575999/foto3_mj5gku.jpg"
               alt="Foto 3"
-              width={300}
-              height={250}
-              className="object-cover rounded-lg h-60"
+              width={400}
+              height={345}
+              className="object-cover rounded-lg h-[170px] w-[200px] md:w-[400px] md:h-[345px]"
             />
           </div>
         </div>

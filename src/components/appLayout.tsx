@@ -1,3 +1,4 @@
+import { Footer } from "./footer";
 import { Header } from "./header";
 
 type Props = {
@@ -11,6 +12,7 @@ export default async function AppLayout({ children }: Props) {
       <div className="flex pt-17 flex-col">
         {children}
       </div>
+      <Footer />
     </>
   );
 }

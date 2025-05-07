@@ -53,9 +53,9 @@ export default function Page() {
         </div>
       </div>
 
-      <div className="flex flex-col gap-4 w-full pb-4 items-center">
-        <h1 className="text-4xl font-bold">Categorias</h1>
-        <div className="flex gap-4 overflow-x-auto whitespace-nowrap w-full pb-2 items-center justify-center">
+      <div className="flex flex-col gap-4 w-full pb-4">
+        <h1 className="text-4xl font-bold text-center">Categorias</h1>
+        <div className="flex gap-4 overflow-x-auto whitespace-nowrap w-full pb-2 2xl:justify-center">
           {categories?.map((category) => (
             <div
               key={category.id}
