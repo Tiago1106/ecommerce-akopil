@@ -1,9 +1,8 @@
 // IMPORTS
-
-import { Button } from "@/components/ui/button";
 import Image from "next/image";
 
 // COMPONENTS
+import { Button } from "@/components/ui/button";
 
 export default function Banner() {
   return (

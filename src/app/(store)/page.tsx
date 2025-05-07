@@ -1,16 +1,19 @@
 'use client'
 
 // IMPORTS
+import { useQuery } from "@tanstack/react-query";
+import Image from "next/image";
 
 // COMPONENTS
 import Banner from "@/components/banner";
 import { ProductCard } from "@/components/productCart";
 import { Button } from "@/components/ui/button";
+
+// HOOKS
 import { getAllProducts } from "@/hooks/products/getAll";
 import { getAllCategorysActives } from "@/hooks/categorys/getAllActives";
-import { useQuery } from "@tanstack/react-query";
-import Image from "next/image";
 
+// FETCH PRODUCTS
 const LIMIT = 7;
 export const useFetchProducts = (limit?: number) => {
   return useQuery({
@@ -19,6 +22,7 @@ export const useFetchProducts = (limit?: number) => {
   });
 };
 
+// FETCH CATEGORYS
 export const useFetchCategorys = () => {
   return useQuery({
     queryKey: ['categorys'],

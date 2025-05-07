@@ -1,8 +1,12 @@
 "use client";
 
+// IMPORTS
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
 import { ShoppingCart, Heart, User, Menu } from "lucide-react";
+import { useQuery } from "@tanstack/react-query";
+
+// COMPONENTS
+import { Button } from "@/components/ui/button";
 import { Input } from "./ui/input";
 import {
   Sheet,
@@ -10,10 +14,11 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 
-import { useQuery } from "@tanstack/react-query";
+// HOOKS
 import { getAllCategorysActives } from "@/hooks/categorys/getAllActives";
 
-export const useFetchCategorys = () => {
+// FETCH CATEGORYS
+const useFetchCategorys = () => {
   return useQuery({
     queryKey: ['categorys'],
     queryFn: () => getAllCategorysActives(),

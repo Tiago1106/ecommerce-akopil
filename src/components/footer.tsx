@@ -1,7 +1,10 @@
 'use client'
 
-import { getAllCategorysActives } from "@/hooks/categorys/getAllActives";
+// IMPORTS  
 import { useQuery } from "@tanstack/react-query";
+
+// HOOKS
+import { getAllCategorysActives } from "@/hooks/categorys/getAllActives";
 
 export const useFetchCategorys = () => {
   return useQuery({
