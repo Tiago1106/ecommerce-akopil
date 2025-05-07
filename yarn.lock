@@ -585,6 +585,18 @@
     postcss "^8.4.41"
     tailwindcss "4.1.4"
 
+"@tanstack/query-core@5.75.4":
+  version "5.75.4"
+  resolved "https://registry.yarnpkg.com/@tanstack/query-core/-/query-core-5.75.4.tgz#e05f2fe4145fb5354271ad19e63eec61f6ce3012"
+  integrity sha512-pcqOUgWG9oGlzkfRQQMMsEFmtQu0wq81A414CtELZGq+ztVwSTAaoB3AZRAXQJs88LmNMk2YpUKuQbrvzNDyRg==
+
+"@tanstack/react-query@^5.75.4":
+  version "5.75.4"
+  resolved "https://registry.yarnpkg.com/@tanstack/react-query/-/react-query-5.75.4.tgz#721e1cdf7debb110671f558dc2b6276f637554a5"
+  integrity sha512-Vf65pzYRkf8fk9SP1ncIZjvaXszBhtsvpf+h45Y/9kOywOrVZfBGUpCdffdsVzbmBzmz6TCFes9bM0d3pRrIsA==
+  dependencies:
+    "@tanstack/query-core" "5.75.4"
+
 "@tybys/wasm-util@^0.9.0":
   version "0.9.0"
   resolved "https://registry.yarnpkg.com/@tybys/wasm-util/-/wasm-util-0.9.0.tgz#3e75eb00604c8d6db470bf18c37b7d984a0e3355"
@@ -2097,6 +2109,11 @@ keyv@^4.5.4:
   integrity sha512-oxVHkHR/EJf2CNXnWxRLW6mg7JyCCUcG0DtEGmL2ctUo1PNTin1PUil+r/+4r5MpVgC/fn1kjsx7mjSujKqIpw==
   dependencies:
     json-buffer "3.0.1"
+
+ky@^1.8.1:
+  version "1.8.1"
+  resolved "https://registry.yarnpkg.com/ky/-/ky-1.8.1.tgz#b1adaa473bc30aced2bab4c408ec177b78d198f0"
+  integrity sha512-7Bp3TpsE+L+TARSnnDpk3xg8Idi8RwSLdj6CMbNWoOARIrGrbuLGusV0dYwbZOm4bB3jHNxSw8Wk/ByDqJEnDw==
 
 language-subtag-registry@^0.3.20:
   version "0.3.23"

@@ -9,21 +9,18 @@ interface ProductCardProps {
 
 export function ProductCard({ image, name, value, discountValue }: ProductCardProps) {
   return (
-    <div className="flex flex-col gap-2 cursor-pointer">
-      {/* Imagem */}
+    <div className="flex flex-col gap-2 cursor-pointer md:w-[500px] w-[160px] shrink-0">
       <Image
         src={image}
         alt={name}
-        width={300}
-        height={400}
+        width={500}
+        height={700} // Para telas maiores
         loading="lazy"
-        className="object-cover rounded-lg h-100 w-full"
+        className="object-cover rounded-lg md:w-[500px] md:h-[700px] w-[160px] h-[280px]" // Para telas pequenas
       />
 
-      {/* Nome do produto */}
       <h2 className="text-lg font-bold">{name}</h2>
 
-      {/* Preço */}
       <div className="flex items-center gap-2">
         {discountValue ? (
           <>

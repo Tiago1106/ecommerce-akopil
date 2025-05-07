@@ -10,7 +10,19 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 
+import { useQuery } from "@tanstack/react-query";
+import { getAllCategorysActives } from "@/hooks/categorys/getAllActives";
+
+export const useFetchCategorys = () => {
+  return useQuery({
+    queryKey: ['categorys'],
+    queryFn: () => getAllCategorysActives(),
+  });
+};
+
 export function Header() {
+  const { data: categorys } = useFetchCategorys();
+
   return (
     <header className="flex items-center justify-between h-16 w-full border-b border-border-secondary border-dashed fixed top-0 left-0 right-0 z-50 bg-background-header px-4">
       {/* Logo */}
@@ -20,12 +32,11 @@ export function Header() {
 
       {/* Desktop Menu */}
       <nav className="hidden lg:flex flex-row items-center gap-4 flex-1 px-4">
-        <Button variant="ghost">Novidades</Button>
-        <Button variant="ghost">Masculino</Button>
-        <Button variant="ghost">Feminino</Button>
-        <Button variant="ghost">Unissex</Button>
-        <Button variant="ghost">Acessórios</Button>
-        <Button variant="ghost">Outros</Button>
+        {categorys?.map((category) => (
+          <Button variant="ghost" key={category.id}>
+            {category.name}
+          </Button>
+        ))}
       </nav>
 
       {/* Search and Icons */}
@@ -53,24 +64,11 @@ export function Header() {
               AKOPIL
             </Link>
             <div className="flex flex-col gap-4">
-              <Button variant="ghost" className="justify-start">
-                Novidades
-              </Button>
-              <Button variant="ghost" className="justify-start">
-                Masculino
-              </Button>
-              <Button variant="ghost" className="justify-start">
-                Feminino
-              </Button>
-              <Button variant="ghost" className="justify-start">
-                Unissex
-              </Button>
-              <Button variant="ghost" className="justify-start">
-                Acessórios
-              </Button>
-              <Button variant="ghost" className="justify-start">
-                Outros
-              </Button>
+              {categorys?.map((category) => (
+                <Button variant="ghost" className="justify-start" key={category.id}>
+                  {category.name}
+                </Button>
+              ))}
               <Input
                 type="text"
                 placeholder="Procurar produto..."
