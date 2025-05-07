@@ -45,7 +45,7 @@ export function Footer() {
       </div>
 
       <div className="border-t border-primary-foreground mt-8 pt-4 text-center text-sm text-primary-foreground">
-        © {new Date().getFullYear()} Sua Loja. Todos os direitos reservados.
+        © {new Date().getFullYear()} Akopil. Todos os direitos reservados.
       </div>
     </footer>
   );
