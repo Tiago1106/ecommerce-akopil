@@ -11,33 +11,36 @@ import Categories from "@/components/home/categories";
 // HOOKS
 import { getAllProducts } from "@/hooks/products/getAll";
 import { getAllCategorysActives } from "@/hooks/categorys/getAllActives";
+import { PropsProduct } from "@/types/products";
+import { PropsCategory } from "@/types/category";
 
-// FETCH PRODUCTS
+// FETCHS
 const LIMIT = 7;
-export const useFetchProducts = (limit?: number) => {
+export const useFetch = () => {
   return useQuery({
-    queryKey: ['products', limit],
-    queryFn: () => getAllProducts(limit),
-  });
-};
-
-// FETCH CATEGORYS
-export const useFetchCategorys = () => {
-  return useQuery({
-    queryKey: ['categorys'],
-    queryFn: () => getAllCategorysActives(),
+    queryKey: ['products-and-categorys', LIMIT],
+    queryFn: async () => {
+      const [products, categories] = await Promise.all([
+        getAllProducts(LIMIT),
+        getAllCategorysActives(),
+      ]);
+      return { products, categories };
+    },
   });
 };
 
 export default function Page() {
-  const { data: products } = useFetchProducts(LIMIT);
-  const { data: categories } = useFetchCategorys();
+  const { data, isLoading, error } = useFetch();
+  
+  if (error) return <div>Erro ao carregar dados</div>;  
+
+  const { products, categories } = data as { products: PropsProduct[], categories: PropsCategory[] };
 
   return (
     <div className="flex flex-col gap-8 p-4">
       <Banner />
-      <Products products={products || []} />
-      <Categories categories={categories || []} />
+      <Products products={products || []} isLoading={isLoading} />
+      <Categories categories={categories || []} isLoading={isLoading} />
     </div>
   );
 }

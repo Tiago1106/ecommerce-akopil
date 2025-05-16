@@ -14,9 +14,9 @@ export function ProductCard({ image, name, value, discountValue }: ProductCardPr
         src={image}
         alt={name}
         width={500}
-        height={700} // Para telas maiores
+        height={700}
         loading="lazy"
-        className="object-cover rounded-lg md:w-[500px] md:h-[700px] w-[160px] h-[280px]" // Para telas pequenas
+        className="object-cover rounded-lg md:w-[500px] md:h-[700px] w-[160px] h-[280px]"
       />
 
       <h2 className="text-lg font-bold">{name}</h2>

@@ -7,7 +7,6 @@ import { useQuery } from "@tanstack/react-query";
 
 // COMPONENTS
 import { Button } from "@/components/ui/button";
-import { Input } from "./ui/input";
 import {
   Sheet,
   SheetContent,
@@ -46,7 +45,7 @@ export function Header() {
 
       {/* Search and Icons */}
       <div className="flex items-center gap-4">
-        <Input type="text" placeholder="Procurar produto..." className="hidden lg:block" />
+        {/* <Input type="text" placeholder="Procurar produto..." className="hidden lg:block" /> */}
         <Button variant="ghost" size="icon">
           <User className="h-5 w-5" />
         </Button>
@@ -74,11 +73,11 @@ export function Header() {
                   {category.name}
                 </Button>
               ))}
-              <Input
+              {/* <Input
                 type="text"
                 placeholder="Procurar produto..."
                 className="mt-4"
-              />
+              /> */}
             </div>
           </SheetContent>
         </Sheet>
