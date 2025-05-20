@@ -53,10 +53,10 @@ export default function CategoryClient({ categoryId }: Props) {
 
   if (error) return <div>Erro ao carregar dados</div>;
 
-  const totalPages = data?.products.total || 1;
+  const lastPage = data?.products.lastPage || 1;
 
   const handleShowMore = () => {
-    if (currentPage < totalPages) {
+    if (currentPage < lastPage) {
       setCurrentPage(prev => prev + 1);
     }
   };
@@ -97,20 +97,23 @@ export default function CategoryClient({ categoryId }: Props) {
       </div>
 
       {/* Produtos */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
         {accumulatedProducts.map((product: PropsProduct) => (
           <ProductCard
             key={product.id}
+            id={product.id}
             image={product.images[0]}
             name={product.name}
             value={product.price}
             discountValue={product.discountPrice}
+            width={250}
+            height={375}
           />
         ))}
       </div>
 
       {/* Botão mostrar mais */}
-      {currentPage < totalPages && (
+      {currentPage < lastPage && (
         <div className="flex justify-center mt-4">
           <Button
             onClick={handleShowMore}

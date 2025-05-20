@@ -33,6 +33,8 @@ export default function Page() {
   const { data, isLoading, error } = useFetch();
   
   if (error) return <div>Erro ao carregar dados</div>;  
+  if (isLoading) return <div>Carregando...</div>;
+  if (!data) return <div>Nenhum dado encontrado</div>;
 
   const { products, categories } = data as { products: PropsProduct[], categories: PropsCategory[] };
 

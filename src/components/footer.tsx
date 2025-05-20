@@ -5,6 +5,7 @@ import { useQuery } from "@tanstack/react-query";
 
 // HOOKS
 import { getAllCategorysActives } from "@/hooks/categorys/getAllActives";
+import Link from "next/link";
 
 export const useFetchCategorys = () => {
   return useQuery({
@@ -32,7 +33,10 @@ export function Footer() {
           <h2 className="text-lg font-semibold mb-2">Categorias</h2>
           <ul className="text-sm space-y-2">
             {categorys?.map((category) => (
-              <li key={category.id}><a href="#" className="hover:underline">{category.name}</a></li>
+              <li key={category.id}>
+                <Link href={`/category/${category.id}`} passHref className="hover:underline">
+                  {category.name}
+                </Link></li>
             ))}
           </ul>
         </div>

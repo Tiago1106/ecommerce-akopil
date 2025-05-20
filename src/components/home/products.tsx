@@ -27,10 +27,13 @@ export default function Products({ products, isLoading }: IProps) {
           products?.map((product, index) => (
             <ProductCard
               key={index}
+              id={product.id}
               image={product.images[0]}
               name={product.name}
               value={product.price}
               discountValue={product.discountPrice}
+              width={500}
+              height={700}
             />
           ))
         )}

@@ -37,9 +37,11 @@ export function Header() {
       {/* Desktop Menu */}
       <nav className="hidden lg:flex flex-row items-center gap-4 flex-1 px-4">
         {categorys?.map((category) => (
-          <Button variant="ghost" key={category.id}>
-            {category.name}
-          </Button>
+          <Link key={category.id} href={`/category/${category.id}`} passHref>
+            <Button asChild variant="ghost">
+              <span>{category.name}</span>
+            </Button>
+          </Link>
         ))}
       </nav>
 

@@ -27,13 +27,21 @@ export default function Categories({ categories, isLoading }: IProps) {
               href={`/category/${category.id}`}
               className="relative flex flex-col cursor-pointer md:w-[500px] w-[160px] shrink-0 md:h-[700px] h-[280px] rounded-lg overflow-hidden"
             >
-              <Image
-                src={category.image}
-                alt={category.name}
-                fill
-                loading="lazy"
-                className="object-cover"
-              />
+              {category.image ? (
+                <Image
+                  src={category.image}
+                  alt={category.name}
+                  fill
+                  loading="lazy"
+                  className="object-cover"
+                />
+              ) : (
+                <div className="absolute inset-0 bg-gray-200 flex items-center justify-center">
+                  <h1 className="text-gray-400 text-xl md:text-3xl font-semibold text-center px-2">
+                    {category.name}
+                  </h1>
+                </div>
+              )}
               <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
                 <h1 className="text-white text-xl md:text-3xl font-semibold text-center px-2">
                   {category.name}
