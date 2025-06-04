@@ -6,7 +6,7 @@ interface PageProps {
   };
 }
 
-export default function CategoryPage({ params }: PageProps) {
+export default async function CategoryPage({ params }: PageProps) {
   const productId = params.id
 
   return (
