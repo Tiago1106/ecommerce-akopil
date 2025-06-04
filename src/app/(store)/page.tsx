@@ -16,7 +16,7 @@ import { PropsCategory } from "@/types/category";
 
 // FETCHS
 const LIMIT = 7;
-export const useFetch = () => {
+const useFetch = () => {
   return useQuery({
     queryKey: ['products-and-categorys', LIMIT],
     queryFn: async () => {
