@@ -24,7 +24,7 @@ interface Props {
 }
 
 export default function ProductPage({ id }: Props) {
-  const { data, isLoading } = useFetch(id);
+  const { data, isLoading, error } = useFetch(id);
 
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
@@ -33,6 +33,8 @@ export default function ProductPage({ id }: Props) {
       setSelectedImage(data.images[0]);
     }
   }, [data?.images])
+
+  if (error) return null;
 
   return (
     <div className="flex flex-col items-center pt-3">

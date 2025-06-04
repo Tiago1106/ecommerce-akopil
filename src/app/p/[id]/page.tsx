@@ -1,15 +1,8 @@
-import ProductPage from "@/components/product/productPage";
 
-interface PageProps {
-  params: {
-    id: string;
-  };
-}
+import ProductPageComponent from "@/components/product/productPage";
 
-export default async function CategoryPage({ params }: PageProps) {
-  const productId = params.id
+export default async function ProductPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
 
-  return (
-    <ProductPage id={productId} />
-  );
+  return <ProductPageComponent id={id} />;
 }

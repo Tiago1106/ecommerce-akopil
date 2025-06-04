@@ -51,7 +51,7 @@ export default function CategoryClient({ categoryId }: Props) {
     }
   }, [data?.products.products, currentPage]);
 
-  if (error) return <div>Erro ao carregar dados</div>;
+  if (error) return null;
 
   const lastPage = data?.products.lastPage || 1;
 
